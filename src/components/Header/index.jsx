@@ -28,7 +28,10 @@ const Title = styled.h1`
   color: #222;
   text-shadow: 2px 2px 1px gray;
   animation: ${ReanderAnimate} 1s ease-in-out;
-
+  @media screen and (max-width: 420px) {
+    font-size: 64px;
+    text-shadow: 1px 1px 1px gray;
+  }
 `;
 
 const SubTitle = styled.h1`
@@ -38,6 +41,10 @@ const SubTitle = styled.h1`
   color: #555;
   text-shadow: 2px 2px 1px gray;
   animation: ${ReanderAnimate} 1s ease-in-out;
+  @media screen and (max-width: 420px) {
+    font-size: 24px;
+    text-shadow: 1px 1px 1px gray;
+  }
 `;
 
 const Header = () => {
