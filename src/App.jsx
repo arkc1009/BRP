@@ -2,7 +2,10 @@ import React, {useState} from "react";
 import styled, {createGlobalStyle} from "styled-components";
 import Header from "./components/Header";
 import ModalAnimate from "./animations/ModalAnimate";
+import BorderAnimate from "./animations/BorderAnimate";
 import RenderShowTip from "./animations/RenderAnimate/RenderShowTip";
+import PickedCard from "./components/PickedCard";
+import Blank from "./atomic/Blank";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -68,10 +71,10 @@ const ModalContainer = styled.div`
 `;
 
 const TipText = styled.p`
-  color: white;
-  opacity: 70%;
+  color: black;
+  opacity: 80%;
   font-family: 'Nanum Gothic', sans-serif;
-  font-weight: bold;
+  font-weight: 1000;
   font-size: 18px;
 `;
 
@@ -79,9 +82,27 @@ const CloseButton = styled.button`
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color: #ff0000;
-  opacity: 80%;
+  background-color: #fff;
+  opacity: 100%;
   outline: none;
+  cursor: pointer;
+	position: relative;
+	border: none;
+	box-shadow: 1px 1px 5px black;
+	
+  &:after {
+    content: '';
+    position: absolute;
+    top: calc(-1 * 2px);
+    left: calc(-1 * 2px);
+    height: calc(100% + 2px * 2);
+    width: calc(100% + 2px * 2);
+    background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    border-radius: calc(2 * 50%);
+    z-index: -1;
+    animation: ${BorderAnimate} 3s ease alternate infinite;
+    background-size: 300% 300%;
+  }
 `;
 
 const App = () => {
@@ -100,6 +121,9 @@ const App = () => {
 			<GlobalStyle/>
 			<Header/>
 			<ShowTip onClick={onClickShowTip}>?</ShowTip>
+			
+			<Blank size={3}/>
+			
 			
 			<ModalContainer v={isOpen}>
 				<TipText>하트, 클로버 = 스쿼트 / 다이아 = 왼발 런지 / 스페이드 = 오른발 런지</TipText>
