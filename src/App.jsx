@@ -1,30 +1,11 @@
 import React, {useState} from "react";
-import styled, {createGlobalStyle} from "styled-components";
+import styled from "styled-components";
 import Header from "./components/Header";
 import ModalAnimate from "./animations/ModalAnimate";
 import BorderAnimate from "./animations/BorderAnimate";
 import RenderShowTip from "./animations/RenderAnimate/RenderShowTip";
 import PickedCard from "./components/PickedCard";
 import Blank from "./atomic/Blank";
-
-const GlobalStyle = createGlobalStyle`
-  body {
-    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+KR:wght@100;300&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
-    margin: 0;
-    padding: 0;
-    background-color: #e5e5e5;
-    font-family: 'Bebas Neue', cursive;
-    font-family: 'Noto Sans KR', sans-serif;
-    font-family: 'Nanum Gothic', sans-serif;
-  }
-
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-`;
 
 const Container = styled.div`
   position: relative;
@@ -86,10 +67,10 @@ const CloseButton = styled.button`
   opacity: 100%;
   outline: none;
   cursor: pointer;
-	position: relative;
-	border: none;
-	box-shadow: 1px 1px 5px black;
-	
+  position: relative;
+  border: none;
+  box-shadow: 1px 1px 5px black;
+
   &:after {
     content: '';
     position: absolute;
@@ -118,7 +99,6 @@ const App = () => {
 	
 	return (
 		<Container>
-			<GlobalStyle/>
 			<Header/>
 			<ShowTip onClick={onClickShowTip}>?</ShowTip>
 			
