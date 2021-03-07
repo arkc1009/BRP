@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import styled, {keyframes} from "styled-components";
+import styled from "styled-components";
 import Blank from "../../atomic/Blank";
 import OpacityAnimate from "../../animations/RenderAnimate/OpacityAnimate";
 import BorderAnimate from "../../animations/BorderAnimate";
@@ -16,7 +16,7 @@ const ResultCard = styled.div`
   user-select: none;
   position: relative;
   cursor: pointer;
-	
+
   &:after {
     content: '';
     position: absolute;
@@ -27,7 +27,7 @@ const ResultCard = styled.div`
     background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
     border-radius: calc(2 * 17px);
     z-index: -1;
-		opacity: 25%;
+    opacity: 25%;
     animation: ${BorderAnimate} 3s ease alternate infinite;
     background-size: 300% 300%;
   }
