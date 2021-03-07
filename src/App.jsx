@@ -124,6 +124,7 @@ const App = () => {
 			
 			<Blank size={3}/>
 			
+			<PickedCard/>
 			
 			<ModalContainer v={isOpen}>
 				<TipText>하트, 클로버 = 스쿼트 / 다이아 = 왼발 런지 / 스페이드 = 오른발 런지</TipText>
