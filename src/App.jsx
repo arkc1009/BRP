@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import styled, {createGlobalStyle, keyframes} from "styled-components";
+import styled, {createGlobalStyle} from "styled-components";
 import Header from "./components/Header";
 import ModalAnimate from "./animations/ModalAnimate";
 import RenderShowTip from "./animations/RenderAnimate/RenderShowTip";
@@ -55,9 +55,9 @@ const ModalContainer = styled.div`
   left: 50%;
   top: 9%;
   transform: translate(-50%, -50%);
-  background-color: black;
+  background-color: white;
   box-shadow: 2px 2px 2px gray;
-  opacity: 50%;
+  opacity: 70%;
   z-index: 10;
   padding: 1.8rem;
   border-radius: 30px;
