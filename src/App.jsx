@@ -6,10 +6,11 @@ import BorderAnimate from "./animations/BorderAnimate";
 import RenderShowTip from "./animations/RenderAnimate/RenderShowTip";
 import PickedCard from "./components/PickedCard";
 import Blank from "./atomic/Blank";
+import Footer from "./components/Footer";
 
 const Container = styled.div`
   position: relative;
-  padding-top: 5rem;
+  padding-top: 2rem;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -110,6 +111,10 @@ const App = () => {
 				<TipText>하트, 클로버 = 스쿼트 / 다이아 = 왼발 런지 / 스페이드 = 오른발 런지</TipText>
 				<CloseButton onClick={clickedCloseBtn}/>
 			</ModalContainer>
+			
+			<Blank size={3}/>
+			
+			<Footer/>
 		</Container>
 	)
 		;
