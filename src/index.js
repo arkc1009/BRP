@@ -23,8 +23,8 @@ const GlobalStyle = createGlobalStyle`
 
 ReactDOM.render(
 	<React.StrictMode>
-		<GlobalStyle/>
 		<App/>
+		<GlobalStyle/>
 	</React.StrictMode>,
 	document.getElementById('root')
 );
