@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 import styled, {createGlobalStyle, keyframes} from "styled-components";
 import Header from "./components/Header";
-import Tip from "./components/Tip";
+import ModalAnimate from "./animations/ModalAnimate";
+import RenderShowTip from "./animations/RenderAnimate/RenderShowTip";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -19,18 +20,6 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-  }
-`;
-
-const ReanderAnimate = keyframes`
-  0% {
-    opacity: 0;
-  }
-	60% {
-		opacity: 0%;
-	}
-  100% {
-    opacity: 65%;
   }
 `;
 
@@ -56,11 +45,51 @@ const ShowTip = styled.button`
   font-weight: bold;
   color: #ccc;
   cursor: pointer;
-  animation: ${ReanderAnimate} 1s ease-in-out;
+  animation: ${RenderShowTip} 1s ease-in-out;
+`;
+
+const ModalContainer = styled.div`
+  position: absolute;
+  width: 700px;
+  height: 50px;
+  left: 50%;
+  top: 9%;
+  transform: translate(-50%, -50%);
+  background-color: black;
+  box-shadow: 2px 2px 2px gray;
+  opacity: 50%;
+  z-index: 10;
+  padding: 1.8rem;
+  border-radius: 30px;
+  display: ${props => props.v ? 'flex' : 'none'};
+  align-items: center;
+  justify-content: space-around;
+  animation: ${ModalAnimate} 1s;
+`;
+
+const TipText = styled.p`
+  color: white;
+  opacity: 70%;
+  font-family: 'Nanum Gothic', sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+`;
+
+const CloseButton = styled.button`
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #ff0000;
+  opacity: 80%;
+  outline: none;
 `;
 
 const App = () => {
 	const [isOpen, setIsOpen] = useState(false);
+	
+	const clickedCloseBtn = () => {
+		setIsOpen(false);
+	}
 	
 	const onClickShowTip = () => {
 		setIsOpen(true);
@@ -71,7 +100,11 @@ const App = () => {
 			<GlobalStyle/>
 			<Header/>
 			<ShowTip onClick={onClickShowTip}>?</ShowTip>
-			<Tip v={isOpen}/>
+			
+			<ModalContainer v={isOpen}>
+				<TipText>하트, 클로버 = 스쿼트 / 다이아 = 왼발 런지 / 스페이드 = 오른발 런지</TipText>
+				<CloseButton onClick={clickedCloseBtn}/>
+			</ModalContainer>
 		</Container>
 	)
 		;
