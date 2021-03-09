@@ -17,6 +17,11 @@ const ResultCard = styled.div`
   position: relative;
   cursor: pointer;
 
+	@media screen and (max-width: 420px) {
+		width: 300px;
+		height: 300px;
+	}
+	
   &:after {
     content: '';
     position: absolute;
@@ -47,6 +52,9 @@ const CardText = styled.span`
   font-family: 'Bebas Neue', cursive;
   font-size: 52px;
   animation: ${OpacityAnimate} 1s;
+  @media screen and (max-width: 420px) {
+    font-size: 42px;
+  }
 `;
 
 const Kind = styled.span`
