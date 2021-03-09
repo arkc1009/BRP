@@ -179,7 +179,6 @@ const PickedCard = () => {
 	}
 	
 	useEffect(() => {
-		console.log(cards.length);
 		const handleKeyDown = (e) => {
 			if (e.key !== ' ') {
 				return;
