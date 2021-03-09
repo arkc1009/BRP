@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import styled from "styled-components";
 import Blank from "../../atomic/Blank";
 import OpacityAnimate from "../../animations/RenderAnimate/OpacityAnimate";
@@ -163,6 +163,10 @@ const PickedCard = () => {
 		</CardText>;
 	}
 	
+	const printLeft = () => {
+		return cards.length;
+	}
+	
 	const judgmentKind = (e) => {
 		if (e.kind === 'diamond') {
 			return 'cornflowerblue';
@@ -174,11 +178,28 @@ const PickedCard = () => {
 		return '#444';
 	}
 	
+	useEffect(() => {
+		console.log(cards.length);
+		const handleKeyDown = (e) => {
+			if (e.key !== ' ') {
+				return;
+			}
+			e.preventDefault();
+			createCard();
+		}
+		
+		document.addEventListener(("keydown"), handleKeyDown);
+		
+		return () => {
+			document.removeEventListener('keydown', handleKeyDown);
+		}
+	}, [cards]);
+	
 	return (
 		<>
 			<ResultCard onClick={createCard}>{printCard()}</ResultCard>
 			<Blank size={1.3}/>
-			<Counter>Left Card = {cards.length}</Counter>
+			<Counter>Left Card = {printLeft()}</Counter>
 		</>
 	)
 }
