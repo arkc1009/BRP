@@ -17,11 +17,11 @@ const ResultCard = styled.div`
   position: relative;
   cursor: pointer;
 
-	@media screen and (max-width: 420px) {
-		width: 300px;
-		height: 300px;
-	}
-	
+  @media screen and (max-width: 420px) {
+    width: 300px;
+    height: 300px;
+  }
+
   &:after {
     content: '';
     position: absolute;
@@ -62,59 +62,6 @@ const Kind = styled.span`
   text-shadow: 2px 2px 5px #ccc;
 `;
 
-// 원본
-// {num: 1, kind: "spade"}
-// , {num: 2, kind: "spade"}
-// , {num: 3, kind: "spade"}
-// , {num: 4, kind: "spade"}
-// , {num: 5, kind: "spade"}
-// , {num: 6, kind: "spade"}
-// , {num: 7, kind: "spade"}
-// , {num: 8, kind: "spade"}
-// , {num: 9, kind: "spade"}
-// , {num: 10, kind: "spade"}
-// , {num: 11, kind: "spade"}
-// , {num: 12, kind: "spade"}
-// , {num: 13, kind: "spade"}
-// , {num: 1, kind: "heart"}
-// , {num: 2, kind: "heart"}
-// , {num: 3, kind: "heart"}
-// , {num: 4, kind: "heart"}
-// , {num: 5, kind: "heart"}
-// , {num: 6, kind: "heart"}
-// , {num: 7, kind: "heart"}
-// , {num: 8, kind: "heart"}
-// , {num: 9, kind: "heart"}
-// , {num: 10, kind: "heart"}
-// , {num: 11, kind: "heart"}
-// , {num: 12, kind: "heart"}
-// , {num: 13, kind: "heart"}
-// , {num: 1, kind: "diamond"}
-// , {num: 2, kind: "diamond"}
-// , {num: 3, kind: "diamond"}
-// , {num: 4, kind: "diamond"}
-// , {num: 5, kind: "diamond"}
-// , {num: 6, kind: "diamond"}
-// , {num: 7, kind: "diamond"}
-// , {num: 8, kind: "diamond"}
-// , {num: 9, kind: "diamond"}
-// , {num: 10, kind: "diamond"}
-// , {num: 11, kind: "diamond"}
-// , {num: 12, kind: "diamond"}
-// , {num: 13, kind: "diamond"}
-// , {num: 1, kind: "clover"}
-// , {num: 2, kind: "clover"}
-// , {num: 3, kind: "clover"}
-// , {num: 4, kind: "clover"}
-// , {num: 5, kind: "clover"}
-// , {num: 6, kind: "clover"}
-// , {num: 7, kind: "clover"}
-// , {num: 8, kind: "clover"}
-// , {num: 9, kind: "clover"}
-// , {num: 10, kind: "clover"}
-// , {num: 11, kind: "clover"}
-// , {num: 12, kind: "clover"}
-// , {num: 13, kind: "clover"}
 
 const PickedCard = () => {
 	const [cards, setCards] = useState([
@@ -125,6 +72,12 @@ const PickedCard = () => {
 		, {num: 5, kind: "spade"}
 		, {num: 6, kind: "spade"}
 		, {num: 7, kind: "spade"}
+		, {num: 8, kind: "spade"}
+		, {num: 9, kind: "spade"}
+		, {num: 10, kind: "spade"}
+		, {num: 11, kind: "spade"}
+		, {num: 12, kind: "spade"}
+		, {num: 13, kind: "spade"}
 		, {num: 1, kind: "heart"}
 		, {num: 2, kind: "heart"}
 		, {num: 3, kind: "heart"}
@@ -132,6 +85,12 @@ const PickedCard = () => {
 		, {num: 5, kind: "heart"}
 		, {num: 6, kind: "heart"}
 		, {num: 7, kind: "heart"}
+		, {num: 8, kind: "heart"}
+		, {num: 9, kind: "heart"}
+		, {num: 10, kind: "heart"}
+		, {num: 11, kind: "heart"}
+		, {num: 12, kind: "heart"}
+		, {num: 13, kind: "heart"}
 		, {num: 1, kind: "diamond"}
 		, {num: 2, kind: "diamond"}
 		, {num: 3, kind: "diamond"}
@@ -139,6 +98,12 @@ const PickedCard = () => {
 		, {num: 5, kind: "diamond"}
 		, {num: 6, kind: "diamond"}
 		, {num: 7, kind: "diamond"}
+		, {num: 8, kind: "diamond"}
+		, {num: 9, kind: "diamond"}
+		, {num: 10, kind: "diamond"}
+		, {num: 11, kind: "diamond"}
+		, {num: 12, kind: "diamond"}
+		, {num: 13, kind: "diamond"}
 		, {num: 1, kind: "clover"}
 		, {num: 2, kind: "clover"}
 		, {num: 3, kind: "clover"}
@@ -146,6 +111,12 @@ const PickedCard = () => {
 		, {num: 5, kind: "clover"}
 		, {num: 6, kind: "clover"}
 		, {num: 7, kind: "clover"}
+		, {num: 8, kind: "clover"}
+		, {num: 9, kind: "clover"}
+		, {num: 10, kind: "clover"}
+		, {num: 11, kind: "clover"}
+		, {num: 12, kind: "clover"}
+		, {num: 13, kind: "clover"}
 	]);
 	const [flag, setFlag] = useState(undefined);
 	
@@ -185,6 +156,12 @@ const PickedCard = () => {
 		}
 		return '#444';
 	}
+	
+	useEffect(() => {
+		let value = prompt();
+		setCards(cards.filter((card) => card.num <= value));
+		console.log(cards);
+	}, []);
 	
 	useEffect(() => {
 		const handleKeyDown = (e) => {
