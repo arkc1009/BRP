@@ -159,8 +159,8 @@ const PickedCard = () => {
 	
 	useEffect(() => {
 		let value = prompt();
-		setCards(cards.filter((card) => card.num <= value));
-		console.log(cards);
+		const newC = cards.filter((card) => card.num <= parseInt(value));
+		setCards(newC);
 	}, []);
 	
 	useEffect(() => {
