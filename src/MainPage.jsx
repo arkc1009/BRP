@@ -32,7 +32,7 @@ const ShowTip = styled.button`
   animation: ${RenderShowTip} 1s ease-in-out;
 `;
 
-const App = () => {
+const MainPage = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const clickedCloseBtn = () => {
@@ -61,4 +61,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default MainPage;
