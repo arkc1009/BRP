@@ -26,7 +26,7 @@ const Container = styled.div`
     background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
     border-radius: calc(2 * 17px);
     z-index: -1;
-    opacity: 1%;
+    opacity: 3%;
     animation: ${BorderAnimate} 3s ease alternate infinite;
     background-size: 300% 300%;
   }
