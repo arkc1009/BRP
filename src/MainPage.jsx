@@ -6,6 +6,7 @@ import PickedCard from "./components/PickedCard";
 import Blank from "./atomic/Blank";
 import Footer from "./components/Footer";
 import Modal from "./components/Modal";
+import BorderAnimate from "./animations/BorderAnimate";
 
 const Container = styled.div`
   position: relative;
@@ -14,6 +15,21 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  
+  &:after {
+    content: '';
+    position: absolute;
+    top: calc(-1 * 2px);
+    left: calc(-1 * 2px);
+    height: calc(100% + 2px * 2);
+    width: calc(100% + 2px * 2);
+    background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    border-radius: calc(2 * 17px);
+    z-index: -1;
+    opacity: 1%;
+    animation: ${BorderAnimate} 3s ease alternate infinite;
+    background-size: 300% 300%;
+  }
 `;
 
 const ShowTip = styled.button`

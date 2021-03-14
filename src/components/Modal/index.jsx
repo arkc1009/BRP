@@ -31,8 +31,8 @@ const TipText = styled.p`
 `;
 
 const CloseButton = styled.button`
-  width: 30px;
-  height: 30px;
+  width: 17px;
+  height: 17px;
   border-radius: 50%;
   background-color: #fff;
   opacity: 100%;
@@ -45,10 +45,10 @@ const CloseButton = styled.button`
   &:after {
     content: "";
     position: absolute;
-    top: calc(-1 * 2px);
-    left: calc(-1 * 2px);
-    height: calc(100% + 2px * 2);
-    width: calc(100% + 2px * 2);
+    top: calc(-1 * 1px);
+    left: calc(-1 * 1px);
+    height: calc(100% + 1px * 2);
+    width: calc(100% + 1px * 2);
     background: linear-gradient(
       60deg,
       #f79533,
