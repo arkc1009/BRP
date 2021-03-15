@@ -46,4 +46,4 @@ const Header = () => {
 	)
 }
 
-export default Header;
+export default Header; //파일이 하나만 있는경우 index.js 이름 사용가능
